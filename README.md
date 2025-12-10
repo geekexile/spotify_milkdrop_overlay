@@ -163,7 +163,7 @@ update_interval = 2  # Check Spotify every 2 seconds (default)
 ### "Authentication failed"
 - Double-check your Client ID and Client Secret
 - Make sure you copied the ENTIRE callback URL including `?code=...`
-- Verify the Redirect URI in Spotify Dashboard is exactly: `http://localhost:8888/callback`
+- Verify the Redirect URI in Spotify Dashboard is exactly: `http://127.0.0.1:8888/callback`
 
 ### "No track playing" constantly
 - Make sure Spotify is actually playing music
