@@ -1,6 +1,6 @@
 # Running Without Console Window
 
-There are three methods to run the Spotify overlay without a console window on Windows:
+There are two methods to run the Spotify overlay without a console window on Windows:
 
 ## Method 1: Use the Batch File (Easiest)
 
@@ -8,13 +8,7 @@ There are three methods to run the Spotify overlay without a console window on W
 2. The overlay will start without a console window
 3. Click the **X button** on the overlay to close it
 
-## Method 2: Use the VBScript (Cleanest)
-
-1. Double-click `run_overlay.vbs`
-2. Completely silent - no console window at all
-3. Click the **X button** on the overlay to close it
-
-## Method 3: Create a Windows Shortcut
+## Method 2: Create a Windows Shortcut
 
 ### Create the Shortcut:
 1. Right-click on your desktop or in a folder
