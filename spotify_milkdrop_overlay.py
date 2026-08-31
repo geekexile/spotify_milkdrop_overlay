@@ -283,7 +283,23 @@ class SpotifyOverlay:
         # Create main frame
         self.main_frame = tk.Frame(self.root, bg='black')
         self.main_frame.pack(fill='both', expand=True, padx=10, pady=10)
-        
+
+        # Close button (packed first so it reserves its corner before the
+        # expanding info_frame claims the remaining space)
+        self.close_button = tk.Label(
+            self.main_frame,
+            text="✕",
+            font=('Arial', 16, 'bold'),
+            fg='#666666',
+            bg='black',
+            cursor='hand2',
+            padx=5
+        )
+        self.close_button.pack(side='right', anchor='ne')
+        self.close_button.bind('<Button-1>', lambda e: self.close())
+        self.close_button.bind('<Enter>', lambda e: self.close_button.config(fg='#ff0000'))
+        self.close_button.bind('<Leave>', lambda e: self.close_button.config(fg='#666666'))
+
         # Album art on the left
         self.album_art_label = tk.Label(
             self.main_frame,
@@ -358,22 +374,7 @@ class SpotifyOverlay:
             bg='black'
         )
         self.total_time_label.pack(side='right')
-        
-        # Close button
-        self.close_button = tk.Label(
-            self.main_frame,
-            text="✕",
-            font=('Arial', 16, 'bold'),
-            fg='#666666',
-            bg='black',
-            cursor='hand2',
-            padx=5
-        )
-        self.close_button.pack(side='right', anchor='ne')
-        self.close_button.bind('<Button-1>', lambda e: self.close())
-        self.close_button.bind('<Enter>', lambda e: self.close_button.config(fg='#ff0000'))
-        self.close_button.bind('<Leave>', lambda e: self.close_button.config(fg='#666666'))
-        
+
         # Track current song and state
         self.current_track = None
         self.current_image = None
